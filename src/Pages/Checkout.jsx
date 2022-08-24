@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 // import "./Checkout.css";
 import logo from "../assets/img/logo.png"
 import bear from "../assets/img/Frame 4663.png"
 import locationPoint from "../assets/img/locationPoint.png"
 import cart from "../assets/img/cart.png"
+import Modal from '../Components/Modal';
 
 
 // import { SiBitcoinsv } from "react-icons/si";
@@ -12,6 +13,8 @@ import cart from "../assets/img/cart.png"
 // import { BsCartPlusFill } from "react-icons/bs";
 
 const Checkout = () => {
+  const [open,setOpen]=useState(false)
+
     return (
       <>
         <div className="margin-side home-container checkout-container">
@@ -164,13 +167,17 @@ const Checkout = () => {
                 I agree to the <span style={{color:"blue"}}>Term & Condition</span> , <span style={{color:"blue"}}>Privacy Policy</span>  & <span style={{color:"blue"}}> Return Policy</span>   
               </span>
               <div class=" mt-3 ">
-                <button class=" place-order-btn" type="button">
+                <button class=" place-order-btn" type="button" onClick={()=>setOpen(!open)}>
                   Place Your Order
                 </button>         
               </div>
             </div>
           </div>
         </div>
+
+        <Modal open={open} setOpen={setOpen}/>
+       
+
       </>
     );
 };
