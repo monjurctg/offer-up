@@ -100,6 +100,7 @@ const Checkout = () => {
                 </div>
                 <div>
                   {/* <SiBitcoinsv className="text-warning fs-5" /> */}
+                  <img src="https://media.istockphoto.com/vectors/blockchain-bitcoin-icon-symbol-vector-vector-id882085928?k=20&m=882085928&s=612x612&w=0&h=KjVJuPadqOEQhviae5GqYPsIqMhXZDd0PcQ6390xQkU=" alt="" height={30} width={30} />
                   <span className="ms-3">Bitcoin</span>
                 </div>
               </form>
