@@ -1,0 +1,186 @@
+.home-container{
+    
+    background: #fff;
+    padding: 40px;
+}
+.title{
+    font-weight: bold;
+    color:#1B7873;
+}
+.home-container .title span{
+    font-weight: 500;
+}
+.home-container .congratulation{
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 24px;
+
+
+}
+.home-container .congratulation span{
+    color: #1B7873 ;
+}
+.home-container p {
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 400;
+}
+
+
+.product-details-container{
+    margin-top: 20px;
+   
+
+}
+
+.product-info .trx-order{
+    font-size: 25px;
+    font-weight: 600;
+
+}
+.product-info button{
+margin-top: 10px;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px 20px;
+gap: 8px;
+width: 200px;
+height: 50px;
+background: #C42F2F;
+border-radius: 8px;
+font-weight: 500;
+color: #fff;
+font-size: 20px;
+
+}
+
+/* detail information */
+/* .information-container{
+
+} */
+ .heading{
+    background-color: #1B7873;
+    padding: 10px 30px;
+    color: #fff;
+    font-size: 24px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+}
+
+.info-card-container{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.info-card{
+    min-height: 250px;
+    padding: 15px;
+    width: 430px;
+   
+   
+    background: #F3F8F7;
+}
+
+
+
+
+@media screen and (max-width:1009px) {
+    .info-card{
+        width: 100%;
+    }
+    
+}
+
+
+/* how to payments */
+
+
+/* quick summery */
+/* .Quick-summary-container{
+    font-size: 24px;
+    line-height: 40px;
+} */
+.Quick-summary-container h5{
+    font-style: 22px;
+font-weight: 500;
+line-height: 32px;
+color: #1B7873;
+
+}
+.Quick-summary-container p{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.Quick-summary-container ol  li{
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 400;
+    margin-top: 20px;
+
+}
+
+/* check out */
+.checkout-container form label{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+.checkout-container form input{
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    
+}
+.calculate h6{
+    font-weight: 700;
+}
+.place-order-btn{
+    
+width: 100%;
+height: 58px;
+
+background: #00726D;
+border-radius: 6px;
+font-weight: 700;
+font-size: 16px;
+color: #FFFFFF;
+line-height: 24px;
+
+
+}
+
+.terms-container{
+    margin-top: 40px;
+}
+.terms-container .title{
+    font-size:18px ;
+    font-weight: 600;
+    color: #1B7873;
+    margin: 30px 0px;
+}
+
+.terms-container h5{
+    font-size:18px ;
+    font-weight: 600;
+    margin: 20px 0px;
+    word-wrap: break-word;
+
+}
+.terms-container p {
+    font-size:18px ;
+    font-weight: 400;
+    word-wrap: break-word;
+    
+   
+}
