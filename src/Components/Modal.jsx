@@ -7,7 +7,7 @@ function Modal({open,setOpen}) {
     setTimeout(()=>{
       navigate("/congratulation")
   
-    },10000)
+    },5000)
 
   }
 
@@ -17,7 +17,7 @@ function Modal({open,setOpen}) {
   return (
     <div className={` ${open?"overlay":""}`}>
          <div className={` modal-container ${open?"modal-open":"modal-close"} `}>
-         <img src={spinner} alt="" />
+         <img src={spinner} alt=""  className='rotate'/>
         <h4>Invoice is generating</h4>
         <p>It will take 2 minutes</p>
         <br /><br />

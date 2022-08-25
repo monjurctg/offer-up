@@ -7,6 +7,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import ConfirmPurchase from './Pages/ConfirmPurchase';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
     <Routes>
       <Route path="/congratulation" element={<Home />}/>
       <Route path="/" element={<Checkout />}/>
+      <Route path="/confirm-purchase" element={<ConfirmPurchase />}/>
+
     </Routes>
   </BrowserRouter>
   );

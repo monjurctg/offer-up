@@ -44,6 +44,8 @@ display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 10px 20px;
+outline: none;
+border: none;
 gap: 8px;
 width: 200px;
 height: 50px;
@@ -54,6 +56,18 @@ color: #fff;
 font-size: 20px;
 
 }
+.rotate {
+    animation: rotation 2s infinite linear;
+
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
 
 /* detail information */
 /* .information-container{
@@ -148,13 +162,14 @@ color: #1B7873;
 .place-order-btn{
     
 width: 100%;
-height: 58px;
+height: 40px;
+border: none;
 
-background: #00726D;
-border-radius: 6px;
+background: #F3BE18;
+border-radius: 50px;
 font-weight: 700;
 font-size: 16px;
-color: #FFFFFF;
+
 line-height: 24px;
 
 
@@ -249,3 +264,56 @@ z-index: 100;
 .modal-close{
     opacity: 0;
 }
+
+/* purchase */
+.purchase-container{
+    background-color: #fff;
+    min-height: 100vh;
+    
+}
+.purchase-container .nav{
+    border-bottom: 1px solid rgba(187, 184, 184, 0.493);
+    padding: 0px 20px;
+}
+.purchase-container .image{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(208, 202, 202, 0.493);
+
+   
+}
+.purchase-container .image p{
+    font-size: 16px;
+    
+}
+.purchase-container .shipping {
+    border-bottom: 1px solid rgba(208, 202, 202, 0.493);
+    padding: 10px;
+    line-height: 30px;
+    
+}
+.purchase-container  .edit {
+    color: #1B7873;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.purchase-calculate{
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    margin: 10px 0px;
+    
+
+}
+.purchase-container .cal-border{
+    border-bottom: 1px solid rgba(208, 202, 202, 0.493);
+    padding: 10px;
+
+
+}
+
+
