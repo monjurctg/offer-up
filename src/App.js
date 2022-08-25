@@ -8,13 +8,16 @@ import {
   Route,
 } from "react-router-dom";
 import ConfirmPurchase from './Pages/ConfirmPurchase';
+import ProductDetailsPage from './Pages/ProductDetailsPage';
+
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/congratulation" element={<Home />}/>
-      <Route path="/" element={<Checkout />}/>
+      <Route path="/checkout" element={<Checkout />}/>
+<Route path='/' element={<ProductDetailsPage/>}/>
       <Route path="/confirm-purchase" element={<ConfirmPurchase />}/>
 
     </Routes>

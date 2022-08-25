@@ -1,7 +1,7 @@
 
 import React from 'react';
 // import "./Checkout.css";
-import logo from "../assets/img/logo.png"
+import logo from "../assets/img/logo2.svg"
 import bear from "../assets/img/Frame 4663.png"
 import locationPoint from "../assets/img/locationPoint.png"
 import cart from "../assets/img/cart.png"
@@ -19,7 +19,7 @@ const Checkout = () => {
     return (
       <>
         <div className="margin-side home-container checkout-container">
-        <img src={logo} alt="" />
+        <img src={logo} alt="" width={200}/>
 
           <div className="row  align-items-center justify-content-around">
             {/* left side part */}

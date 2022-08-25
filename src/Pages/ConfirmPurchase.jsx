@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo from '../assets/img/logo.png'
 import img from '../assets/img/Frame 4663.png'
 import Modal from '../Components/Modal'
+import Header from '../Components/Shared/Header'
 
 
 function ConfirmPurchase() {
@@ -9,11 +10,9 @@ function ConfirmPurchase() {
 
   return (
     <>
+   
     <div className='purchase-container'>
-        <nav className='nav'>
-        <img src={logo} alt="" width={150}/>
-            
-        </nav>
+    <Header/>
         <div className="container">
             <h3 className='fw-bold mt-5'>Confirm Purchase</h3>
             <div className="row gap-4">
