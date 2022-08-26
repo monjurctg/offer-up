@@ -1,10 +1,8 @@
 import React from "react";
 import Location from "../../assets/img/locationPoint.png";
 import logo from "../../assets/img/logo2.svg";
-import Categories from "./Categories";
 function Header() {
   return (
-   <>
     <div className="header">
       <div className="container-md">
         <div className="row">
@@ -53,11 +51,22 @@ function Header() {
             </div>
           </div>
         </div>
-    
+        <div className="categories">
+          <h5 className="mr-4">Electronics & Media</h5>
+          <h5 className="mr-4">Home & Garden</h5>
+          <h5 className="mr-4">Clothing,Shoes & Accesories</h5>
+          <h5 className="mr-4">Baby & Kids</h5>
+          <h5 className="mr-4">Vehicles</h5>
+          <h5 className="mr-4">Toys,Games & Hobbies</h5>
+          <h5 className="mr-4">Sports & Outdoors</h5>
+          <h5 className="mr-4">Pet supplies</h5>
+          <h5 className="mr-4">Bussiness Equipment</h5>
+
+          <h5 className="mr-4">Wedding</h5>
+          <h5 className="mr-4">More</h5>
+        </div>
       </div>
     </div>
-    <Categories/>
-   </>
   );
 }
 
