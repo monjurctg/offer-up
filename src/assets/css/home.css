@@ -315,10 +315,10 @@ body {
   background-color: #fff;
   min-height: 100vh;
 }
-/* .purchase-container .nav {
+.purchase-container .nav {
   border-bottom: 1px solid rgba(187, 184, 184, 0.493);
-  padding: 0px 20px;
-} */
+  padding: 10px 20px;
+}
 .purchase-container .image {
   justify-content: center;
   align-items: center;

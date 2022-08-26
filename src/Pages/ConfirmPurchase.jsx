@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../assets/img/logo.png'
+import logo from '../assets/img/logo2.svg'
 import img from '../assets/img/Frame 4663.png'
 import Modal from '../Components/Modal'
 import Header from '../Components/Shared/Header'
@@ -12,7 +12,9 @@ function ConfirmPurchase() {
     <>
    
     <div className='purchase-container'>
-    <Header/>
+<nav className="nav">
+<img src={logo} alt="" width={200}  />
+</nav>
         <div className="container">
             <h3 className='fw-bold mt-5'>Confirm Purchase</h3>
             <div className="row gap-4">
