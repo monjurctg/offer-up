@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import profile from "../assets/img/kia.jpg";
 
 function Leftside() {
@@ -19,7 +20,9 @@ function Leftside() {
           <p>Condition:New</p>
           <p>Sports & Outside-Exercise-Fitness accessories</p>
         </div>
-        <button className="place-order-btn text-center my-3">Buy Now</button>
+        <Link to={"/checkout"}>
+          <button className="place-order-btn text-center my-3">Buy Now</button>
+        </Link>
         <button className="ask-btn text-center">Ask</button>
 
         <div className="d-flex my-3 justify-content-around">
