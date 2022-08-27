@@ -4,8 +4,8 @@ body {
 .header {
   height: 110px;
   display: flex;
-padding-top: 20px;
-padding-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 15px;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #00000059;
@@ -160,8 +160,6 @@ padding-bottom: 15px;
 
   background: #f3f8f7;
 }
-
-
 
 /* how to payments */
 
@@ -338,23 +336,21 @@ padding-bottom: 15px;
   justify-content: space-between;
   margin: 10px 0px;
 }
- .cal-border {
+.cal-border {
   border-bottom: 1px solid rgba(208, 202, 202, 0.493);
   padding: 10px;
 }
-.two-day  {
+.two-day {
   border-bottom: 1px solid rgba(208, 202, 202, 0.493);
-
-
 }
-.two-day p{
+.two-day p {
   font-size: 16px;
 }
 
 .categories {
   display: flex;
   margin-top: 15px;
-  
+
   cursor: pointer;
   flex-wrap: wrap;
   /* overflow-x: auto; */
@@ -364,7 +360,6 @@ padding-bottom: 15px;
   font-size: 11px;
   margin-right: 10px;
   font-weight: 600;
-  
 }
 
 .links {
@@ -388,6 +383,7 @@ padding-bottom: 15px;
 
 .right-side .big-image img {
   width: 50%;
+  height: 350px;
 }
 
 .small-images {
@@ -515,7 +511,6 @@ padding-bottom: 15px;
   object-fit: fill;
 }
 
-
 /* responsive */
 
 @media screen and (max-width: 1009px) {
@@ -525,85 +520,60 @@ padding-bottom: 15px;
   .header-left .location {
     margin-right: 0px;
   }
-  .header-right .icon{
- 
-  font-size: small;
-  /* background-color: #009688; */
-
-
+  .header-right .icon {
+    font-size: small;
+    /* background-color: #009688; */
   }
   .links p {
     font-size: 10px !important;
-    
-    
-   
   }
   .info-card {
     width: 100%;
   }
   .header-right {
- 
     justify-content: start;
-    
   }
   .header-right .icon {
     padding: 0px 5px;
-    
   }
-  .header-left .input p{
+  .header-left .input p {
     width: 20%;
     font-weight: 300;
   }
-  .header-left .logo{
+  .header-left .logo {
     width: 40%;
   }
   .header-left .location span {
-font-size: 12px !important;
-
+    font-size: 12px !important;
   }
-
-
 }
 
 @media screen and (max-width: 600px) {
- 
   .header-left .location {
-   display: none;
+    display: none;
   }
-  .header{
-    
+  .header {
     height: 90px;
   }
-  .header-left{
+  .header-left {
     margin: 0px;
     padding: 0px;
     justify-content: space-between;
   }
-  .header-left .input{
+  .header-left .input {
     width: 100%;
     margin-left: 10px;
     align-self: flex-end;
-    
-    
   }
- 
- 
-  .header-left .input p{
+
+  .header-left .input p {
     width: 20%;
   }
- 
-  
+
   .right-side .big-image img {
     width: 70% !important;
-   
   }
   .links p {
     font-size: 9px !important;
-    
-    
-   
   }
-  
-
-  
 }

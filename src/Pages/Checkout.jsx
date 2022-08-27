@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 // import "./Checkout.css";
-import logo from "../assets/img/logo2.svg";
-import bear from "../assets/img/Frame 4663.png";
-import locationPoint from "../assets/img/locationPoint.png";
-import cart from "../assets/img/cart.png";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import cart from "../assets/img/cart.png";
+import locationPoint from "../assets/img/locationPoint.png";
+import logo from "../assets/img/logo2.svg";
 
 // import { SiBitcoinsv } from "react-icons/si";
 // import { IoLocation } from "react-icons/io5";
@@ -14,7 +13,6 @@ import axios from "axios";
 const Checkout = () => {
   const navigate = useNavigate();
   const [loding, setLoading] = useState(false);
-
 
   const [order, setOrder] = useState({
     name: "",
@@ -25,20 +23,31 @@ const Checkout = () => {
     city: "",
     zip: "",
   });
- 
+  const [activeProduct, setActiveProduct] = useState({});
+
+  const active = async () => {
+    const res = await axios.get("http://localhost:5000/api/active-product");
+    console.log(res);
+    if (res.data.length > 0) {
+      setActiveProduct(res.data[0]);
+    }
+  };
+  // console.log(activeProduct?.image1);
+  useEffect(() => {
+    active();
+  }, []);
   const handeChange = (e) => {
-    console.log(order)
+    console.log(order);
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
     setLoading(true);
     const url = "http://localhost:5000/api/add-order";
     let res = await axios.post(url, order);
-    console.log(res)
+    console.log(res);
 
     if (res.data.message) {
       setLoading(false);
-    
 
       navigate("/confirm-purchase");
     } else {
@@ -68,31 +77,66 @@ const Checkout = () => {
               </div>
               <div class="col-12">
                 <label htmlFor="">Name</label>
-                <input type="text" name="name" placeholder="Your Name" onChange={handeChange} />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Email</label>
-                <input type="text" name="email" placeholder="your Email" onChange={handeChange} />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="your Email"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Phone</label>
-                <input type="number" name="phone" placeholder="your Phone" onChange={handeChange} />
+                <input
+                  type="number"
+                  name="phone"
+                  placeholder="your Phone"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Address</label>
-                <input type="text" name="address" placeholder="Your Address" onChange={handeChange}/>
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Your Address"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">City</label>
-                <input type="text" placeholder="city" name="city" onChange={handeChange} />
+                <input
+                  type="text"
+                  placeholder="city"
+                  name="city"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">State</label>
-                <input type="text" placeholder="state" name="staet" onChange={handeChange} />
+                <input
+                  type="text"
+                  placeholder="state"
+                  name="staet"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">Zip</label>
-                <input type="text" placeholder="zip" name="zip" onChange={handeChange} />
+                <input
+                  type="text"
+                  placeholder="zip"
+                  name="zip"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12">
                 <p className="mb-1 mt-4">
@@ -113,23 +157,19 @@ const Checkout = () => {
                 <span className="ms-3">Bitcoin</span>
               </div>
             </form>
-         
           </div>
 
           {/* right side part */}
           <div className="col-12 col-md-5">
             <div className="row d-flex align-items-center">
               <div className="col-md-5">
-                <img src={bear} height="230" alt="" />
+                <img src={activeProduct?.image1} height="230" alt="" />
               </div>
               <div className="col-md-7  text-start ">
                 {" "}
-                <p>
-                  Double Wall Stainless Steel Bottle - vacuum Insulated -
-                  20oz/590ml - High Quality - New
-                </p>
+                <p>{activeProduct?.title}</p>
                 <p>Total Unit: 1</p>
-                <p> Unit Price: 67.00</p>
+                <p> Unit Price: {activeProduct?.price}</p>
               </div>
             </div>
 
@@ -145,26 +185,31 @@ const Checkout = () => {
                 <div className="d-flex mt-4  justify-content-between">
                   <h6>Subtotal</h6>{" "}
                   <h6>
-                    $ <span>67.00</span>
+                    $ <span>{parseFloat(activeProduct?.price)}</span>
                   </h6>
                 </div>
-                <div className="d-flex mt-4 justify-content-between">
+                {/* <div className="d-flex mt-4 justify-content-between">
                   <h6>vat</h6>{" "}
                   <h6>
                     $ <span>7.00</span>
                   </h6>
-                </div>
+                </div> */}
                 <div className="d-flex mt-4 mb-3 justify-content-between mb-0">
                   <h6>Shipping fee</h6>{" "}
                   <h6>
-                    $ <span>6.00</span>
+                    $ <span>{activeProduct?.shippingCost}</span>
                   </h6>
                 </div>
                 <hr className="mt-0" />
                 <div className="d-flex my-4 justify-content-between">
                   <h6>total</h6>{" "}
                   <h6>
-                    $ <span>67.00</span>
+                    ${" "}
+                    <span>
+                      {" "}
+                      {parseFloat(activeProduct?.price) +
+                        parseFloat(activeProduct?.shippingCost)}
+                    </span>
                   </h6>
                 </div>
               </div>
