@@ -88,11 +88,11 @@ const Checkout = () => {
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">State</label>
-                <input type="text" placeholder="state" name="staet" onChange={handeChange} />
+                <input type="text" placeholder="state" name="state" onChange={handeChange} />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">Zip</label>
-                <input type="text" placeholder="zip" name="zip" onChange={handeChange} />
+                <input type="number" placeholder="zip" name="zip"  onChange={handeChange} />
               </div>
               <div class="col-12">
                 <p className="mb-1 mt-4">
