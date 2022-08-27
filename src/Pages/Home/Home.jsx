@@ -11,7 +11,7 @@ import TermsAndCondition from '../../Components/TermsAndCondition'
 function Home() {
   return (
     <div className='margin-side home-container'>
-   <img src={logo} alt="" />
+   <img src={logo} alt="" width={150} />
       <h6 className='congratulation'>
      <span> Congratulations!</span> The item 2001 Suzuki GSX-R 1000 is reserved under your name for the next 48 Hours.
       </h6>

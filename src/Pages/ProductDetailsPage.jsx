@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import cars from "../assets/img/cars.jpg";
 import kia from "../assets/img/kia.jpg";
 import Leftside from "../Components/Leftside";
@@ -6,6 +7,20 @@ import Leftside from "../Components/Leftside";
 import Header from "../Components/Shared/Header";
 
 function ProductDetailsPage() {
+  const [activeProduct,setActiveProduct]= useState({})
+  const active=async ()=>{
+    const res = await axios.get("http://localhost:5000/api/active-product")
+    console.log(res)
+    if(res.data.length>0){
+      setActiveProduct(res.data[0])
+    }
+
+    
+  }
+  console.log(activeProduct?.image1)
+  useEffect(()=>{
+    active()
+  },[])
   return (
     <>
       <Header />
@@ -34,20 +49,20 @@ function ProductDetailsPage() {
           </div>
         </div>
         <div className="description row">
-          <div className="col-8">
+          <div className="col-md-8 col-12">
             <div className="right-side">
               <div className="big-image">
-                <img src={cars} alt="" />
+                <img src={activeProduct?.image1} alt="" />
               </div>
               <div className="small-images">
-                <img src={cars} className="active" alt="" />
-                <img src={kia} alt="" />
-                <img src={kia} alt="" />
-                <img src={kia} alt="" />
+                <img src={activeProduct?.image1}className="active" alt="" />
+                <img src={activeProduct?.image2} alt="" />
+                <img src={activeProduct?.image3} alt="" />
+                <img src={activeProduct?.image4} alt="" />
               </div>
               <div className="description-option">
                 <h4>Description</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>{activeProduct?.description}</p>
               </div>
 
               <div className="buttons d-flex my-3">
@@ -60,14 +75,14 @@ function ProductDetailsPage() {
                   <p>Report</p>
                 </div>
                 <div className="love-btn">
-                  <i class="fa-regular fa-square-share-nodes"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
                   <p>Share</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-4">
-            <Leftside />
+          <div className="col-md-4">
+            <Leftside product = {activeProduct} />
           </div>
         </div>
       </div>

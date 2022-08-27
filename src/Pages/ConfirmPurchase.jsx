@@ -13,7 +13,7 @@ function ConfirmPurchase() {
    
     <div className='purchase-container'>
 <nav className="nav">
-<img src={logo} alt="" width={200}  />
+<img src={logo} alt="" width={200} height={100} />
 </nav>
         <div className="container">
             <h3 className='fw-bold mt-5'>Confirm Purchase</h3>
@@ -59,16 +59,7 @@ function ConfirmPurchase() {
                         <p className='fw-bold'>$10.00</p>
                     </div>
                </div>
-               <div className="cal-border d-flex gap-3">
-               <div>
-               <img src="https://static.vecteezy.com/system/resources/previews/005/015/974/non_2x/lock-protection-flat-icon-illustration-cyber-internet-security-lock-protection-protect-secure-flat-icons-vector.jpg" width={100} height={50} alt="" />
-               </div>
-                <div>
-                    <h6 className='fw-bold mb-2'>2-Day Purchase Protection</h6>
-                    <p>Item shipped through Offer Up come with a e-day  purcases protection . <span className="fw-bold">Learn More</span></p>
-                </div>
-
-               </div>
+              
                <button className="place-order-btn mt-4" onClick={()=>setOpen(!open)}>
                 Confirm Purchase
                </button>

@@ -2,28 +2,26 @@ import React from "react";
 import { Link } from "react-router-dom";
 import profile from "../assets/img/kia.jpg";
 
-function Leftside() {
+function Leftside({ product }) {
   return (
     <div className="left-side">
       <div className="left-description ">
-        <h4>Double Wall Stainless Steel</h4>
-        <h4>Bottle Vacuum Insulated -</h4>
-        <h4>20oz/500ml-High Quality-New</h4>
-        <h4>$20</h4>
+        <h4>{product?.title}</h4>
+        <h4>{product?.sortTitle}</h4>
+        <h4>${product?.price}</h4>
         <div className="ship">
           <i class="fa-solid fa-ship"></i>
-          <p>Ships for $7.89</p>
+          <p>{product?.shippingCost}</p>
         </div>
 
         <div className="posting-time ">
-          <p>Posted 2 days ago in Los Angeles, CA</p>
-          <p>Condition:New</p>
-          <p>Sports & Outside-Exercise-Fitness accessories</p>
+          <p>Posted 2 days ago in {product?.place}</p>
+          <p>Condition:{product?.condition}</p>
+          <p>{product?.category}</p>
         </div>
         <Link to={"/checkout"}>
           <button className="place-order-btn text-center my-3">Buy Now</button>
         </Link>
-        <button className="ask-btn text-center">Ask</button>
 
         <div className="d-flex my-3 justify-content-around">
           <div className="l-btn ">
@@ -43,6 +41,23 @@ function Leftside() {
         <div className="profile-description">
           <h4>A-Tr</h4>
           <p>Member since MAY 2022</p>
+        </div>
+      </div>
+      <div className="two-day p-3 d-flex gap-3">
+        <div>
+          <img
+            src="https://media.istockphoto.com/vectors/protected-shield-protection-security-icon-vector-id1225850589?k=20&m=1225850589&s=170667a&w=0&h=juDdXS6TEBSO9XDt9lBgQ20l6NeQnRMmmLJAvIGJhuw="
+            width={100}
+            height={50}
+            alt=""
+          />
+        </div>
+        <div>
+          <h6 className="fw-bold mb-2">2-Day Purchase Protection</h6>
+          <p>
+            Item shipped through Offer Up come with a e-day purcases protection
+            . <span className="fw-bold">Learn More</span>
+          </p>
         </div>
       </div>
     </div>

@@ -26,11 +26,11 @@ function DetailInformation() {
               
              <div className="mt-5">
              <span className='fw-bold' style={{fontSize:"20px"}}>Name:</span>
-               <span className="ms-5" style={{color:"black",fontSize:"20px"}}>Sarah  Wylde</span>
+               <span className="ms-5" style={{color:"black",fontSize:"20px"}}>ananda</span>
              </div>
              <div className="mt-4 d-flex" style={{fontSize:"20px"}}>
              <span className='fw-bold'>Address:</span>
-               <span className="ms-4">1933 Skyline Dr Minot ND 58703</span>
+               <span className="ms-4">1234 ctg Dr Minot ND 500</span>
              </div>
               </div>
             

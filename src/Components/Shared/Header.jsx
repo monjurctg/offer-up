@@ -1,6 +1,6 @@
 import React from "react";
 import Location from "../../assets/img/locationPoint.png";
-import logo from "../../assets/img/logo2.svg";
+import logo from "../../assets/img/logo.png";
 function Header() {
   return (
     <div className="header">
@@ -14,16 +14,21 @@ function Header() {
               </div>
               <div className="input">
                 <input type="text" placeholder="Search" />
-                <p>o</p>
+                <p>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </p>
               </div>
               <div className="location">
-                <img src={Location} alt="" />
+                <span>
+                  {" "}
+                  <img src={Location} alt="" />
+                </span>
                 <span>Montreal</span>
               </div>
             </div>
           </div>
           <div className="col-md-4 d-none d-md-block header-right">
-            <div className="d-flex gap-4">
+            <div className="d-flex gap-md-4">
               <div className="icon">
                 <p>
                   <i class="fa-regular fa-heart"></i>
@@ -46,24 +51,24 @@ function Header() {
                 <p>
                   <i class="fa-regular fa-circle-user"></i>
                 </p>
-                <p>User</p>
+                <small>User</small>
               </div>
             </div>
           </div>
         </div>
-        <div className="categories">
-          <h5 className="mr-4">Electronics & Media</h5>
-          <h5 className="mr-4">Home & Garden</h5>
-          <h5 className="mr-4">Clothing,Shoes & Accesories</h5>
-          <h5 className="mr-4">Baby & Kids</h5>
-          <h5 className="mr-4">Vehicles</h5>
-          <h5 className="mr-4">Toys,Games & Hobbies</h5>
-          <h5 className="mr-4">Sports & Outdoors</h5>
-          <h5 className="mr-4">Pet supplies</h5>
-          <h5 className="mr-4">Bussiness Equipment</h5>
+        <div className="categories d-none d-md-flex">
+          <h5 className="mr-3">Electronics & Media</h5>
+          <h5 className="mr-3">Home & Garden</h5>
+          <h5 className="mr-3">Clothing,Shoes & Accesories</h5>
+          <h5 className="mr-3">Baby & Kids</h5>
+          <h5 className="mr-3">Vehicles</h5>
+          <h5 className="mr-3">Toys,Games & Hobbies</h5>
+          <h5 className="mr-3">Sports & Outdoors</h5>
+          <h5 className="mr-3">Pet supplies</h5>
+          <h5 className="mr-3">Bussiness Equipment</h5>
 
-          <h5 className="mr-4">Wedding</h5>
-          <h5 className="mr-4">More</h5>
+          <h5 className="mr-3">Wedding</h5>
+          <h5 className="mr-3">More</h5>
         </div>
       </div>
     </div>
