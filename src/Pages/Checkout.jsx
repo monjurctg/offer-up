@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import cart from "../assets/img/cart.png";
 import locationPoint from "../assets/img/locationPoint.png";
 import logo from "../assets/img/logo2.svg";
+import { toastifyAlertSuccess } from "../Components/alert/tostifyALert";
 
 // import { SiBitcoinsv } from "react-icons/si";
 // import { IoLocation } from "react-icons/io5";
@@ -26,8 +27,10 @@ const Checkout = () => {
   const [activeProduct, setActiveProduct] = useState({});
 
   const active = async () => {
-    const res = await axios.get("http://localhost:5000/api/active-product");
-    console.log(res);
+    const res = await axios.get(
+      "https://offerup1.vercel.app/api/active-product"
+    );
+    // console.log(res);
     if (res.data.length > 0) {
       setActiveProduct(res.data[0]);
     }
@@ -37,23 +40,23 @@ const Checkout = () => {
     active();
   }, []);
   const handeChange = (e) => {
-    console.log(order);
+    // console.log(order);
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
     setLoading(true);
-    const url = "http://localhost:5000/api/add-order";
+    const url = "https://offerup1.vercel.app/api/add-order";
     let res = await axios.post(url, order);
-    console.log(res);
+    // console.log(res);
 
     if (res.data.message) {
       setLoading(false);
-
+      toastifyAlertSuccess("order confirmed", "top-right");
       navigate("/confirm-purchase");
     } else {
       setLoading(false);
 
-      console.log(res.data.err);
+      // console.log(res.data.err);
     }
   };
 

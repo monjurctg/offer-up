@@ -8,8 +8,10 @@ function ProductDetailsPage() {
   const [activeProduct, setActiveProduct] = useState({});
   const [imageNow, setimageNow] = useState();
   const active = async () => {
-    const res = await axios.get("http://localhost:5000/api/active-product");
-    console.log(res);
+    const res = await axios.get(
+      "https://offerup1.vercel.app/api/active-product"
+    );
+    // console.log(res);
     if (res.data.length > 0) {
       setActiveProduct(res.data[0]);
       setimageNow(res.data[0]?.image1);
