@@ -40,7 +40,7 @@ const Checkout = () => {
     active();
   }, []);
   const handeChange = (e) => {
-    // console.log(order);
+    console.log(order);
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
