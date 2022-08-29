@@ -175,7 +175,7 @@ const Checkout = () => {
                 style={{
                   borderRadius: "10px",
                   height: "200px",
-                  width: "150px",
+                  width: "200px",
                   objectFit: "fill",
                 }}
               />

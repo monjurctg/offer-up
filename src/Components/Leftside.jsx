@@ -15,8 +15,8 @@ function Leftside({ product }) {
 
         <div className="posting-time ">
           <p>Posted 2 days ago in {product?.place}</p>
-          <p>Condition:New</p>
-          <p>Category:Car & Trucks</p>
+          <p>Condition: New</p>
+          <p>Category: Car & Trucks</p>
         </div>
         <Link to={"/checkout"}>
           <button className="place-order-btn text-center my-3">Buy Now</button>

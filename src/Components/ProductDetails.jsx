@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../assets/img/Frame 4663.png";
 import icon from "../assets/img/Icon.png";
 
 function ProductDetails({ activeProduct }) {
@@ -8,7 +7,7 @@ function ProductDetails({ activeProduct }) {
       <div className="row g-5">
         <div className="col-md-5 image">
           <img
-            src={activeProduct?.image2 || img}
+            src={activeProduct?.image1}
             alt=""
             style={{ height: "400px", width: "100%", objectFit: "fill" }}
           />
