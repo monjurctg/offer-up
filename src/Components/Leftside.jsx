@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import profile from "../assets/img/kia.jpg";
 
 function Leftside({ product }) {
   return (
@@ -16,8 +15,8 @@ function Leftside({ product }) {
 
         <div className="posting-time ">
           <p>Posted 2 days ago in {product?.place}</p>
-          <p>Condition:{product?.condition}</p>
-          <p>{product?.category}</p>
+          <p>Condition:New</p>
+          <p>Category:Car & Trucks</p>
         </div>
         <Link to={"/checkout"}>
           <button className="place-order-btn text-center my-3">Buy Now</button>
@@ -36,7 +35,7 @@ function Leftside({ product }) {
         </div>
       </div>
       <div className="left-profile">
-        <img src={profile} alt="" />
+        <img src={product?.image3} alt="" />
 
         <div className="profile-description">
           <h4>A-Tr</h4>
