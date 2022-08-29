@@ -188,7 +188,7 @@ const Checkout = () => {
               </div> */}
             </div>
 
-            <div className="mt-5">
+            <div className="mt-2">
               <p>
                 {" "}
                 {/* <BsCartPlusFill className="text-success" />{" "} */}
