@@ -32,9 +32,9 @@ function TermsAndCondition() {
       <h5>Payment to the Seller Agreement</h5>
       <p>
         The payment will be released to the seller only after the buyer agrees
-        and confirms to OfferupMotors that they want to keep the
-        item.OfferupMotors will wait for the confirmation from the buyer 3-5
-        days(Delivery Time)and 5days(Inspection Period).
+        and confirms to OfferupMotors that they want to keep the item.Offerup
+        Motors will wait for the confirmation from the buyer 3-5 days(Delivery
+        Time)and 5days(Inspection Period).
       </p>
 
       <h5>

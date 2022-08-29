@@ -13,7 +13,7 @@ function DetailInformation() {
               Seller Information
             </h5>
 
-            <div className="mt-5">
+            <div className="mt-2">
               <span className="fw-bold" style={{ fontSize: "20px" }}>
                 Name:
               </span>
@@ -36,13 +36,16 @@ function DetailInformation() {
               Buyer Information
             </h5>
 
-            <div className="mt-5">
+            <div className="mt-2">
               <span className="fw-bold" style={{ fontSize: "20px" }}>
                 Name:
               </span>
-              <p className="ms-5" style={{ color: "black", fontSize: "20px" }}>
+              <span
+                className="ms-5"
+                style={{ color: "black", fontSize: "20px" }}
+              >
                 {buyerInfo?.name}
-              </p>
+              </span>
             </div>
             <div className="mt-4 d-flex" style={{ fontSize: "20px" }}>
               <span className="fw-bold">Address:</span>
@@ -60,7 +63,7 @@ function DetailInformation() {
               Delivery Info
             </h5>
 
-            <div className="mt-5">
+            <div className="mt-2">
               <span className="fw-bold" style={{ fontSize: "20px" }}>
                 Company:
               </span>

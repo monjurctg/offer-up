@@ -15,7 +15,8 @@ function ProductDetails({ activeProduct }) {
         </div>
         <div className="col-md-7 product-info">
           <h5 className="trx-order">
-            OfferUp Transaction Order ID - {Math.random()}
+            OfferUp Transaction Order ID -{" "}
+            {132344345434 + Math.floor(Math.random(11) * 1999)}
           </h5>
           <div className="d-flex">
             <button>waiting list:2</button>
