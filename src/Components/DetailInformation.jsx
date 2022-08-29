@@ -40,20 +40,17 @@ function DetailInformation() {
               <span className="fw-bold" style={{ fontSize: "20px" }}>
                 Name:
               </span>
-              <span
-                className="ms-5"
-                style={{ color: "black", fontSize: "20px" }}
-              >
+              <p className="ms-5" style={{ color: "black", fontSize: "20px" }}>
                 {buyerInfo?.name}
-              </span>
+              </p>
             </div>
             <div className="mt-4 d-flex" style={{ fontSize: "20px" }}>
               <span className="fw-bold">Address:</span>
-              <span className="ms-4">
+              <p className="ms-4" style={{ overflow: "auto" }}>
                 {" "}
                 {buyerInfo?.zip},{buyerInfo?.state},{buyerInfo?.address},
                 {buyerInfo?.city}
-              </span>
+              </p>
             </div>
           </div>
         </div>
