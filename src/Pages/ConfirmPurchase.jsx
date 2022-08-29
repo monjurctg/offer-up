@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import logo from "../assets/img/logo2.svg";
+import logo from "../assets/img/logo.jpg";
+
 import Modal from "../Components/Modal";
 
 function ConfirmPurchase() {
@@ -33,7 +34,12 @@ function ConfirmPurchase() {
           <div className="row gap-4">
             <div className="col-md-7">
               <div className="d-flex image">
-                <img src={activeProduct?.image1} width={100} alt="" />
+                <img
+                  src={activeProduct?.image1}
+                  width={400}
+                  style={{ height: "200px", objectFit: "fill" }}
+                  alt=""
+                />
                 <p>{activeProduct?.description}</p>
               </div>
               <div className="shipping mt-3">
@@ -51,9 +57,16 @@ function ConfirmPurchase() {
               <div className="d-flex justify-content-between mt-3">
                 <div>
                   <span className="fw-bold ">Payment method</span>
-                  <span>(require)</span>
+                  {/* <span>(require)</span> */}
                 </div>
-                <p className="edit">Add</p>
+                <p className="edit">
+                  <img
+                    src="https://media.istockphoto.com/vectors/blockchain-bitcoin-icon-symbol-vector-vector-id882085928?k=20&m=882085928&s=612x612&w=0&h=KjVJuPadqOEQhviae5GqYPsIqMhXZDd0PcQ6390xQkU="
+                    alt=""
+                    height={40}
+                    width={40}
+                  />
+                </p>
               </div>
             </div>
             <div className="col-md-4 ">

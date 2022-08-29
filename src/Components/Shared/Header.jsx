@@ -1,6 +1,6 @@
 import React from "react";
 import Location from "../../assets/img/locationPoint.png";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo.jpg";
 function Header() {
   return (
     <div className="header">

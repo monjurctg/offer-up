@@ -309,7 +309,7 @@ body {
   padding: 10px 20px;
 }
 .purchase-container .image {
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   gap: 10px;
   margin-top: 20px;

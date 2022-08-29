@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 // import "./Checkout.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cart from "../assets/img/cart.png";
 import locationPoint from "../assets/img/locationPoint.png";
-import logo from "../assets/img/logo2.svg";
+import logo from "../assets/img/logo.jpg";
 import { toastifyAlertSuccess } from "../Components/alert/tostifyALert";
 
 // import { SiBitcoinsv } from "react-icons/si";
@@ -64,9 +64,11 @@ const Checkout = () => {
   return (
     <>
       <div className="margin-side home-container checkout-container">
-        <img src={logo} alt="" width={150} />
+        <Link to={"/"}>
+          <img src={logo} alt="" width={150} />
+        </Link>
 
-        <div className="row  mt-5 align-items-center justify-content-around">
+        <div className="row  align-items-center justify-content-around">
           {/* left side part */}
           <div className="col-12 col-md-5">
             <h4 className="fw-bold mb-3"> Checkout</h4>
@@ -166,15 +168,25 @@ const Checkout = () => {
           {/* right side part */}
           <div className="col-12 col-md-5">
             <div className="row d-flex align-items-center">
-              <div className="col-md-5">
-                <img src={activeProduct?.image1} height="230" alt="" />
-              </div>
-              <div className="col-md-7  text-start ">
+              {/* <div className="col-md-5"> */}
+              <img
+                src={activeProduct?.image1}
+                height="230"
+                alt=""
+                style={{
+                  borderRadius: "10px",
+                  height: "250px",
+                  width: "100%",
+                  objectFit: "fill",
+                }}
+              />
+              {/* </div> */}
+              {/* <div className="col-md-7  text-start ">
                 {" "}
                 <p>{activeProduct?.title}</p>
                 <p>Total Unit: 1</p>
                 <p> Unit Price: {activeProduct?.price}</p>
-              </div>
+              </div> */}
             </div>
 
             <div className="mt-5">
