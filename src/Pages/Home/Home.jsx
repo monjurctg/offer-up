@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/img/logo.jpg";
+import logo from "../../assets/img/logo.jpeg";
 import DetailInformation from "../../Components/DetailInformation";
 import HowToPayment from "../../Components/HowToPayment";
 import Location from "../../Components/Location";

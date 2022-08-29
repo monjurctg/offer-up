@@ -71,7 +71,7 @@ function DetailInformation() {
                 className="ms-5"
                 style={{ color: "black", fontSize: "20px" }}
               >
-                Wallapop Motors
+                OfferUp Motors
               </span>
             </div>
             <div className="mt-4 d-flex" style={{ fontSize: "20px" }}>

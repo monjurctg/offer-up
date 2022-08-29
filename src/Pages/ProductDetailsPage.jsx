@@ -14,7 +14,7 @@ function ProductDetailsPage() {
     // console.log(res);
     if (res.data.length > 0) {
       setActiveProduct(res.data[0]);
-      setimageNow(res.data[0]?.image1);
+      setimageNow(res.data[0]?.image2);
     }
   };
   // console.log(activeProduct?.image1);

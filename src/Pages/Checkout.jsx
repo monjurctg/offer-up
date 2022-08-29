@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import cart from "../assets/img/cart.png";
 import locationPoint from "../assets/img/locationPoint.png";
-import logo from "../assets/img/logo.jpg";
+import logo from "../assets/img/logo.jpeg";
 import { toastifyAlertSuccess } from "../Components/alert/tostifyALert";
 
 // import { SiBitcoinsv } from "react-icons/si";
@@ -170,13 +170,12 @@ const Checkout = () => {
             <div className="row d-flex align-items-center">
               {/* <div className="col-md-5"> */}
               <img
-                src={activeProduct?.image1}
-                height="230"
+                src={activeProduct?.image2}
                 alt=""
                 style={{
                   borderRadius: "10px",
-                  height: "250px",
-                  width: "100%",
+                  height: "200px",
+                  width: "150px",
                   objectFit: "fill",
                 }}
               />

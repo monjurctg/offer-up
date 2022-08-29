@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import logo from "../assets/img/logo.jpg";
+import logo from "../assets/img/logo.jpeg";
 
 import Modal from "../Components/Modal";
 
@@ -35,7 +35,7 @@ function ConfirmPurchase() {
             <div className="col-md-7">
               <div className="d-flex image">
                 <img
-                  src={activeProduct?.image1}
+                  src={activeProduct?.image2}
                   width={400}
                   style={{ height: "200px", objectFit: "fill" }}
                   alt=""
