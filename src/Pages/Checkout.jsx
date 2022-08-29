@@ -15,7 +15,6 @@ const Checkout = () => {
   const navigate = useNavigate();
   const [loding, setLoading] = useState(false);
 
-
   const [order, setOrder] = useState({
     name: "",
     email: "",
@@ -25,20 +24,19 @@ const Checkout = () => {
     city: "",
     zip: "",
   });
- 
+
   const handeChange = (e) => {
-    console.log("order")
+    console.log("order");
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
     setLoading(true);
     const url = "http://localhost:5000/api/add-order";
     let res = await axios.post(url, order);
-    console.log(res)
+    console.log(res);
 
     if (res.data.message) {
       setLoading(false);
-    
 
       navigate("/confirm-purchase");
     } else {
@@ -68,31 +66,66 @@ const Checkout = () => {
               </div>
               <div class="col-12">
                 <label htmlFor="">Name</label>
-                <input type="text" name="name" placeholder="Your Name" onChange={handeChange} />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Email</label>
-                <input type="text" name="email" placeholder="your Email" onChange={handeChange} />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="your Email"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Phone</label>
-                <input type="number" name="phone" placeholder="your Phone" onChange={handeChange} />
+                <input
+                  type="number"
+                  name="phone"
+                  placeholder="your Phone"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Address</label>
-                <input type="text" name="address" placeholder="Your Address" onChange={handeChange}/>
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Your Address"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">City</label>
-                <input type="text" placeholder="city" name="city" onChange={handeChange} />
+                <input
+                  type="text"
+                  placeholder="city"
+                  name="city"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">State</label>
-                <input type="text" placeholder="state" name="state" onChange={handeChange} />
+                <input
+                  type="text"
+                  placeholder="state"
+                  name="state"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">Zip</label>
-                <input type="number" placeholder="zip" name="zip"  onChange={handeChange} />
+                <input
+                  type="number"
+                  placeholder="zip"
+                  name="zip"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12">
                 <p className="mb-1 mt-4">
@@ -113,7 +146,6 @@ const Checkout = () => {
                 <span className="ms-3">Bitcoin</span>
               </div>
             </form>
-         
           </div>
 
           {/* right side part */}
