@@ -50,6 +50,7 @@ const Checkout = () => {
     // console.log(res);
 
     if (res.data.message) {
+      localStorage.setItem("order", JSON.stringify(res.data.data));
       setLoading(false);
       toastifyAlertSuccess("order confirmed", "top-right");
       navigate("/confirm-purchase");
@@ -90,7 +91,7 @@ const Checkout = () => {
               <div class="col-12 mt-3">
                 <label htmlFor="">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   placeholder="your Email"
                   onChange={handeChange}
@@ -128,14 +129,14 @@ const Checkout = () => {
                 <input
                   type="text"
                   placeholder="state"
-                  name="staet"
+                  name="state"
                   onChange={handeChange}
                 />
               </div>
               <div class="col-md-4 mt-3">
                 <label htmlFor="">Zip</label>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="zip"
                   name="zip"
                   onChange={handeChange}

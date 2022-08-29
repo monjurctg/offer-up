@@ -14,7 +14,7 @@ function Home() {
 
   const active = async () => {
     const res = await axios.get(
-      "https://offerup-server-five.vercel.app/api/active-product"
+      "https://offerup1.vercel.app/api/active-product"
     );
     // console.log(res);
     if (res.data.length > 0) {

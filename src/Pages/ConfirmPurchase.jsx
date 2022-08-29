@@ -6,6 +6,7 @@ import Modal from "../Components/Modal";
 function ConfirmPurchase() {
   const [open, setOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState({});
+  let buyerInfo = JSON.parse(localStorage.getItem("order"));
 
   const active = async () => {
     const res = await axios.get(
@@ -37,9 +38,13 @@ function ConfirmPurchase() {
               </div>
               <div className="shipping mt-3">
                 <h6 className="fw-bold">Shipping to</h6>
-                <p>Anthony Piacido</p>
+                <p> {buyerInfo?.name}</p>
                 <div className="d-flex justify-content-between">
-                  <p>1200 E Sandpiper St.apopka,Fl #2712</p>
+                  <p>
+                    {" "}
+                    {buyerInfo?.zip},{buyerInfo?.state},{buyerInfo?.address},
+                    {buyerInfo?.city}
+                  </p>
                   <p className="edit">Edit</p>
                 </div>
               </div>

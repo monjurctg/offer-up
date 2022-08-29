@@ -7,7 +7,7 @@ function ProductDetails({ activeProduct }) {
     <div className="product-details-container mt-5">
       <div className="row g-5">
         <div className="col-md-5 image">
-          <img src={img} alt="" />
+          <img src={activeProduct?.image1 || img} alt="" />
         </div>
         <div className="col-md-7 product-info">
           <h5 className="trx-order">
