@@ -1,26 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import cars from "../assets/img/cars.jpg";
-import kia from "../assets/img/kia.jpg";
 import Leftside from "../Components/Leftside";
 
 import Header from "../Components/Shared/Header";
 
 function ProductDetailsPage() {
-  const [activeProduct,setActiveProduct]= useState({})
-  const active=async ()=>{
-    const res = await axios.get("http://localhost:5000/api/active-product")
-    console.log(res)
-    if(res.data.length>0){
-      setActiveProduct(res.data[0])
+  const [activeProduct, setActiveProduct] = useState({});
+  const [imageNow, setimageNow] = useState();
+  const active = async () => {
+    const res = await axios.get(
+      "https://offerup1.vercel.app/api/active-product"
+    );
+    // console.log(res);
+    if (res.data.length > 0) {
+      setActiveProduct(res.data[0]);
+      setimageNow(res.data[0]?.image2);
     }
-
-    
-  }
-  console.log(activeProduct?.image1)
-  useEffect(()=>{
-    active()
-  },[])
+  };
+  // console.log(activeProduct?.image1);
+  useEffect(() => {
+    active();
+  }, []);
   return (
     <>
       <Header />
@@ -52,13 +52,33 @@ function ProductDetailsPage() {
           <div className="col-md-8 col-12">
             <div className="right-side">
               <div className="big-image">
-                <img src={activeProduct?.image1} alt="" />
+                <img src={imageNow} alt="" />
               </div>
               <div className="small-images">
-                <img src={activeProduct?.image1}className="active" alt="" />
-                <img src={activeProduct?.image2} alt="" />
-                <img src={activeProduct?.image3} alt="" />
-                <img src={activeProduct?.image4} alt="" />
+                <img
+                  src={activeProduct?.image1}
+                  onClick={() => setimageNow(activeProduct?.image1)}
+                  className={activeProduct?.image1 === imageNow ? "active" : ""}
+                  alt=""
+                />
+                <img
+                  src={activeProduct?.image2}
+                  className={activeProduct?.image2 === imageNow ? "active" : ""}
+                  onClick={() => setimageNow(activeProduct?.image2)}
+                  alt=""
+                />
+                <img
+                  src={activeProduct?.image3}
+                  className={activeProduct?.image3 === imageNow ? "active" : ""}
+                  onClick={() => setimageNow(activeProduct?.image3)}
+                  alt=""
+                />
+                <img
+                  className={activeProduct?.image4 === imageNow ? "active" : ""}
+                  src={activeProduct?.image4}
+                  onClick={() => setimageNow(activeProduct?.image4)}
+                  alt=""
+                />
               </div>
               <div className="description-option">
                 <h4>Description</h4>
@@ -82,7 +102,7 @@ function ProductDetailsPage() {
             </div>
           </div>
           <div className="col-md-4">
-            <Leftside product = {activeProduct} />
+            <Leftside product={activeProduct} />
           </div>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 // import "./Checkout.css";
-import logo from "../assets/img/logo2.svg";
-import bear from "../assets/img/Frame 4663.png";
-import locationPoint from "../assets/img/locationPoint.png";
-import cart from "../assets/img/cart.png";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import cart from "../assets/img/cart.png";
+import locationPoint from "../assets/img/locationPoint.png";
+import logo from "../assets/img/logo.jpeg";
+import { toastifyAlertSuccess } from "../Components/alert/tostifyALert";
 
 // import { SiBitcoinsv } from "react-icons/si";
 // import { IoLocation } from "react-icons/io5";
@@ -24,34 +24,38 @@ const Checkout = () => {
     city: "",
     zip: "",
   });
-
+ 
   const handeChange = (e) => {
-    console.log("order");
+    console.log("order")
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
     setLoading(true);
-    const url = "http://localhost:5000/api/add-order";
+    const url = "https://offerup1.vercel.app/api/add-order";
     let res = await axios.post(url, order);
-    console.log(res);
+    console.log(res)
 
     if (res.data.message) {
+      localStorage.setItem("order", JSON.stringify(res.data.data));
       setLoading(false);
+    
 
       navigate("/confirm-purchase");
     } else {
       setLoading(false);
 
-      console.log(res.data.err);
+      // console.log(res.data.err);
     }
   };
 
   return (
     <>
       <div className="margin-side home-container checkout-container">
-        <img src={logo} alt="" width={150} />
+        <Link to={"/"}>
+          <img src={logo} alt="" width={150} />
+        </Link>
 
-        <div className="row  mt-5 align-items-center justify-content-around">
+        <div className="row  align-items-center justify-content-around">
           {/* left side part */}
           <div className="col-12 col-md-5">
             <h4 className="fw-bold mb-3"> Checkout</h4>
@@ -75,12 +79,7 @@ const Checkout = () => {
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="your Email"
-                  onChange={handeChange}
-                />
+                <input type="text" name="email" placeholder="your Email" onChange={handeChange} />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Phone</label>
@@ -151,21 +150,27 @@ const Checkout = () => {
           {/* right side part */}
           <div className="col-12 col-md-5">
             <div className="row d-flex align-items-center">
-              <div className="col-md-5">
-                <img src={bear} height="230" alt="" />
-              </div>
-              <div className="col-md-7  text-start ">
+              {/* <div className="col-md-5"> */}
+              <img
+                src={activeProduct?.image2}
+                alt=""
+                style={{
+                  borderRadius: "10px",
+                  height: "200px",
+                  width: "150px",
+                  objectFit: "fill",
+                }}
+              />
+              {/* </div> */}
+              {/* <div className="col-md-7  text-start ">
                 {" "}
-                <p>
-                  Double Wall Stainless Steel Bottle - vacuum Insulated -
-                  20oz/590ml - High Quality - New
-                </p>
+                <p>{activeProduct?.title}</p>
                 <p>Total Unit: 1</p>
-                <p> Unit Price: 67.00</p>
-              </div>
+                <p> Unit Price: {activeProduct?.price}</p>
+              </div> */}
             </div>
 
-            <div className="mt-5">
+            <div className="mt-2">
               <p>
                 {" "}
                 {/* <BsCartPlusFill className="text-success" />{" "} */}
@@ -177,26 +182,31 @@ const Checkout = () => {
                 <div className="d-flex mt-4  justify-content-between">
                   <h6>Subtotal</h6>{" "}
                   <h6>
-                    $ <span>67.00</span>
+                    $ <span>{parseFloat(activeProduct?.price)}</span>
                   </h6>
                 </div>
-                <div className="d-flex mt-4 justify-content-between">
+                {/* <div className="d-flex mt-4 justify-content-between">
                   <h6>vat</h6>{" "}
                   <h6>
                     $ <span>7.00</span>
                   </h6>
-                </div>
+                </div> */}
                 <div className="d-flex mt-4 mb-3 justify-content-between mb-0">
                   <h6>Shipping fee</h6>{" "}
                   <h6>
-                    $ <span>6.00</span>
+                    $ <span>{activeProduct?.shippingCost}</span>
                   </h6>
                 </div>
                 <hr className="mt-0" />
                 <div className="d-flex my-4 justify-content-between">
                   <h6>total</h6>{" "}
                   <h6>
-                    $ <span>67.00</span>
+                    ${" "}
+                    <span>
+                      {" "}
+                      {parseFloat(activeProduct?.price) +
+                        parseFloat(activeProduct?.shippingCost)}
+                    </span>
                   </h6>
                 </div>
               </div>
