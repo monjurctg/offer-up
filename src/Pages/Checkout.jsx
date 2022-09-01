@@ -28,7 +28,7 @@ const Checkout = () => {
 
   const active = async () => {
     const res = await axios.get(
-      "https://offerup1.vercel.app/api/active-product"
+      "https://server.offerup-motors.com/api/active-product"
     );
     // console.log(res);
     if (res.data.length > 0) {
@@ -40,12 +40,12 @@ const Checkout = () => {
     active();
   }, []);
   const handeChange = (e) => {
-    console.log(order);
+    // console.log(order);
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
     setLoading(true);
-    const url = "https://offerup1.vercel.app/api/add-order";
+    const url = "https://server.offerup-motors.com/api/add-order";
     let res = await axios.post(url, order);
     // console.log(res);
 
