@@ -14,7 +14,7 @@ function Home() {
 
   const active = async () => {
     const res = await axios.get(
-      "https://offerup1.vercel.app/api/active-product"
+      "https://server.offerup-motors.com/api/active-product"
     );
     // console.log(res);
     if (res.data.length > 0) {
@@ -26,25 +26,27 @@ function Home() {
     active();
   }, []);
   return (
-    <div className="margin-side home-container">
-      <img src={logo} alt="" width={150} />
-      <h6 className="congratulation">
-        <span> Congratulations!</span> The item {activeProduct?.title} is
-        reserved under your name for the next 48 Hours.
-      </h6>
-      <p style={{ marginTop: "20px" }}>
-        We appreciate your business and thank you for choosing OfferUp! Please
-        read carefully the instructions below in order to complete
-        thistransaction.This invoice is available only for 48 hours!
-      </p>
+    <div>
+      <div className="container">
+        <img src={logo} alt="" width={150} />
+        <h6 className="congratulation">
+          <span> Congratulations!</span> The item {activeProduct?.title} is
+          reserved under your name for the next 48 Hours.
+        </h6>
+        <p style={{ marginTop: "20px" }}>
+          We appreciate your business and thank you for choosing OfferUp! Please
+          read carefully the instructions below in order to complete
+          thistransaction.This invoice is available only for 48 hours!
+        </p>
 
-      <ProductDetails activeProduct={activeProduct} />
-      <DetailInformation />
-      <HowToPayment />
-      <Location />
-      <Qr />
-      <QuickSummary />
-      <TermsAndCondition />
+        <ProductDetails activeProduct={activeProduct} />
+        <DetailInformation />
+        <HowToPayment />
+        <Location />
+        <Qr />
+        <QuickSummary />
+        <TermsAndCondition />
+      </div>
     </div>
   );
 }

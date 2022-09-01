@@ -11,7 +11,7 @@ function ConfirmPurchase() {
 
   const active = async () => {
     const res = await axios.get(
-      "https://offerup1.vercel.app/api/active-product"
+      "https://server.offerup-motors.com/api/active-product"
     );
     // console.log(res);
     if (res.data.length > 0) {

@@ -1,19 +1,17 @@
 
-import './App.css';
-import Home from './Pages/Home/Home';
-import Checkout from './Pages/Checkout';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
+  HashRouter, Route, Routes
 } from "react-router-dom";
+import './App.css';
+import Checkout from './Pages/Checkout';
 import ConfirmPurchase from './Pages/ConfirmPurchase';
+import Home from './Pages/Home/Home';
 import ProductDetailsPage from './Pages/ProductDetailsPage';
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
       <Route path="/congratulation" element={<Home />}/>
       <Route path="/checkout" element={<Checkout />}/>
@@ -21,7 +19,7 @@ function App() {
       <Route path="/confirm-purchase" element={<ConfirmPurchase />}/>
 
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
   );
 }
 

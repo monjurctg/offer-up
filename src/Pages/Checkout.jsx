@@ -24,21 +24,34 @@ const Checkout = () => {
     city: "",
     zip: "",
   });
- 
+
+  const [activeProduct, setActiveProduct] = useState({});
+
+  const active = async () => {
+    const res = await axios.get(
+      "https://server.offerup-motors.com/api/active-product"
+    );
+    // console.log(res);
+    if (res.data.length > 0) {
+      setActiveProduct(res.data[0]);
+    }
+  };
+  // console.log(activeProduct?.image1);
+  useEffect(() => {
+    active();
+  }, []);
   const handeChange = (e) => {
-    console.log("order")
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
     setLoading(true);
-    const url = "https://offerup1.vercel.app/api/add-order";
+    const url = "https://server.offerup-motors.com/api/add-order";
     let res = await axios.post(url, order);
-    console.log(res)
+    console.log(res);
 
     if (res.data.message) {
       localStorage.setItem("order", JSON.stringify(res.data.data));
       setLoading(false);
-    
 
       navigate("/confirm-purchase");
     } else {
@@ -79,7 +92,12 @@ const Checkout = () => {
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Email</label>
-                <input type="text" name="email" placeholder="your Email" onChange={handeChange} />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="your Email"
+                  onChange={handeChange}
+                />
               </div>
               <div class="col-12 mt-3">
                 <label htmlFor="">Phone</label>
@@ -157,7 +175,7 @@ const Checkout = () => {
                 style={{
                   borderRadius: "10px",
                   height: "200px",
-                  width: "150px",
+                  width: "200px",
                   objectFit: "fill",
                 }}
               />

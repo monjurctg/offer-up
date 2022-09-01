@@ -1,37 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700&family=Nunito:wght@400;700&family=Poppins:wght@200;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700&family=Nunito:wght@400;700&family=Poppins:wght@200;400;500;700&display=swap");
 
-@import url('./assets/css/home.css');
-html{
+@import url("./assets/css/home.css");
+html {
   box-sizing: border-box;
   font-size: 16px;
   word-wrap: break-word;
 }
 
-body,h1,h2,h3,h4,h5,h6,p,ul{
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  -webkit-font-smoothing:antialiased;
-  
+  -webkit-font-smoothing: antialiased;
 }
-ul{
+ul {
   list-style: none;
 }
-img{
+img {
   max-width: 100%;
-  height: auto ;
-  
+  height: auto;
 }
-body{
-  
-background: #E5E5E5;
-margin: auto;
+body {
+  background: #e5e5e5;
+  margin: auto;
 
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.margin-side{
+.margin-side {
   margin: 0px 20px;
 }
-
-

@@ -8,14 +8,15 @@ function ProductDetails({ activeProduct }) {
       <div className="row g-5">
         <div className="col-md-5 image">
           <img
-            src={activeProduct?.image2 || img}
+            src={activeProduct?.image1 || img}
             alt=""
-            style={{ height: "400px", width: "100%", objectFit: "fill" }}
+            style={{ height: "322px", width: "100%", objectFit: "fill" }}
           />
         </div>
         <div className="col-md-7 product-info">
           <h5 className="trx-order">
-            OfferUp Transaction Order ID - 3320220389654
+            OfferUp Transaction Order ID -{" "}
+            {132344345434 + Math.floor(Math.random(11) * 1999)}
           </h5>
           <div className="d-flex">
             <button>waiting list:2</button>
