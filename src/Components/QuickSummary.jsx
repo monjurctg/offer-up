@@ -26,7 +26,7 @@ function QuickSummary() {
           phone number you submitted. Please input thecode on the ATM.
         </li>
         <li> Scanthe QR Code of your OfferUp Invoice.</li>
-        <li> Deposit the cash amount of $2,000.00.</li>
+        {/* <li> Deposit the cash amount of $2,000.00.</li> */}
         <li>
           After thetotal amount is into the ATM, select "confirm"in order to
           receive the receipt for thetransaction.{" "}

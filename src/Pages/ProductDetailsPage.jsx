@@ -32,19 +32,11 @@ function ProductDetailsPage() {
             <span>&gt;</span>
           </div>
           <div className="d-flex ">
-            <p>Sports & Outsides</p>
+            <p>Vehicle </p>
             <span>&gt;</span>
           </div>
           <div className="d-flex ">
-            <p>Exercise</p>
-            <span>&gt;</span>
-          </div>
-          <div className="d-flex ">
-            <p>Filter & Accesories</p>
-            <span>&gt;</span>
-          </div>
-          <div className="d-flex ">
-            <p>Double wall Stainless Steel</p>
+            <p>Cars & Trucks</p>
             <span>&gt;</span>
           </div>
         </div>

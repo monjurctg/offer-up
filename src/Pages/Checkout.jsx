@@ -24,7 +24,6 @@ const Checkout = () => {
     city: "",
     zip: "",
   });
-
   const [activeProduct, setActiveProduct] = useState({});
 
   const active = async () => {
@@ -41,18 +40,19 @@ const Checkout = () => {
     active();
   }, []);
   const handeChange = (e) => {
+    // console.log(order);
     setOrder((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submit = async () => {
     setLoading(true);
     const url = "https://server.offerup-motors.com/api/add-order";
     let res = await axios.post(url, order);
-    console.log(res);
+    // console.log(res);
 
     if (res.data.message) {
       localStorage.setItem("order", JSON.stringify(res.data.data));
       setLoading(false);
-
+      toastifyAlertSuccess("order confirmed", "top-right");
       navigate("/confirm-purchase");
     } else {
       setLoading(false);
@@ -93,7 +93,7 @@ const Checkout = () => {
               <div class="col-12 mt-3">
                 <label htmlFor="">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   placeholder="your Email"
                   onChange={handeChange}
