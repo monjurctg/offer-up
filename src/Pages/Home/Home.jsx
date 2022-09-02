@@ -14,6 +14,7 @@ function Home() {
   const [activeProduct, setActiveProduct] = useState({});
 
   let { id } = useParams();
+  console.log("id :>> ", id);
   const active = async () => {
     const res = await axios.get(
       `https://server.offerup-motors.com/api/show/${id}`

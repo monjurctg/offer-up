@@ -9,7 +9,7 @@ function ConfirmPurchase() {
   const [open, setOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState({});
   let buyerInfo = JSON.parse(localStorage.getItem("order"));
-  let { id } = useParams();
+  let { id, vehicle, name } = useParams();
 
   const active = async () => {
     const res = await axios.get(
