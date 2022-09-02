@@ -1,6 +1,6 @@
 
 import {
-  HashRouter, Route, Routes
+  BrowserRouter, Route, Routes
 } from "react-router-dom";
 import './App.css';
 import Checkout from './Pages/Checkout';
@@ -11,15 +11,17 @@ import ProductDetailsPage from './Pages/ProductDetailsPage';
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
     <Routes>
+{/* <Route path='/' element={<ProductDetailsPage/>}/> */}
+<Route path='/:id/:vehicle/:name' element={<ProductDetailsPage/>}/>
+
       <Route path="/congratulation" element={<Home />}/>
       <Route path="/checkout" element={<Checkout />}/>
-<Route path='/' element={<ProductDetailsPage/>}/>
       <Route path="/confirm-purchase" element={<ConfirmPurchase />}/>
 
     </Routes>
-  </HashRouter>
+  </BrowserRouter>
   );
 }
 

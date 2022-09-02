@@ -1,17 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Leftside from "../Components/Leftside";
 
 import Header from "../Components/Shared/Header";
 
 function ProductDetailsPage() {
   const [activeProduct, setActiveProduct] = useState({});
+  let { id } = useParams();
+  // console.log("vehicle", name);
   const [imageNow, setimageNow] = useState();
   const active = async () => {
-    const res = await axios.get(
-      "https://server.offerup-motors.com/api/active-product"
-    );
-    // console.log(res);
+    const res = await axios.get(`https://server.offerup-motors.com/${id}`);
+    console.log(res);
     if (res.data.length > 0) {
       setActiveProduct(res.data[0]);
       setimageNow(res.data[0]?.image2);

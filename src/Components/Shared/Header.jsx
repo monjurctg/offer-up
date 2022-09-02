@@ -1,5 +1,4 @@
 import React from "react";
-import Location from "../../assets/img/locationPoint.png";
 import logo from "../../assets/img/logo.jpeg";
 function Header() {
   return (
@@ -18,13 +17,13 @@ function Header() {
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </p>
               </div>
-              <div className="location">
+              {/* <div className="location">
                 <span>
                   {" "}
                   <img src={Location} alt="" />
                 </span>
                 <span>Montreal</span>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-md-4 d-none d-md-block header-right">
