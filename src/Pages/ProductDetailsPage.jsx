@@ -11,7 +11,9 @@ function ProductDetailsPage() {
   // console.log("vehicle", name);
   const [imageNow, setimageNow] = useState();
   const active = async () => {
-    const res = await axios.get(`https://server.offerup-motors.com/${id}`);
+    const res = await axios.get(
+      `https://server.offerup-motors.com/api/show/${id}`
+    );
     console.log(res);
     if (res.data.length > 0) {
       setActiveProduct(res.data[0]);
