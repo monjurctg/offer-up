@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function Leftside({ product }) {
+  let { id, vehicle, name } = useParams();
   return (
     <div className="left-side">
       <div className="left-description ">
@@ -18,7 +19,7 @@ function Leftside({ product }) {
           <p>Condition: New</p>
           <p>Category: Car & Trucks</p>
         </div>
-        <Link to={"/checkout"}>
+        <Link to={`/checkout/${id}/${vehicle}/${name}`}>
           <button className="place-order-btn text-center my-3">Buy Now</button>
         </Link>
 

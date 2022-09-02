@@ -12,8 +12,9 @@ import { toastifyAlertSuccess } from "../Components/alert/tostifyALert";
 // import { BsCartPlusFill } from "react-icons/bs";
 
 const Checkout = () => {
+  let { id, vehicle, name } = useParams();
   const navigate = useNavigate();
-  let { id } = useParams();
+
   const [loding, setLoading] = useState(false);
 
   const [order, setOrder] = useState({
@@ -54,7 +55,7 @@ const Checkout = () => {
       localStorage.setItem("order", JSON.stringify(res.data.data));
       setLoading(false);
       toastifyAlertSuccess("order confirmed", "top-right");
-      navigate("/confirm-purchase");
+      navigate(`/confirm-purchase/${id}/${vehicle}/${name}`);
     } else {
       setLoading(false);
 
