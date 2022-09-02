@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import logo from "../../assets/img/logo.jpeg";
 import DetailInformation from "../../Components/DetailInformation";
 import HowToPayment from "../../Components/HowToPayment";
@@ -12,9 +13,10 @@ import TermsAndCondition from "../../Components/TermsAndCondition";
 function Home() {
   const [activeProduct, setActiveProduct] = useState({});
 
+  let { id } = useParams();
   const active = async () => {
     const res = await axios.get(
-      "https://server.offerup-motors.com/api/active-product"
+      `https://server.offerup-motors.com/api/show/${id}`
     );
     // console.log(res);
     if (res.data.length > 0) {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import logo from "../assets/img/logo.jpeg";
 
 import Modal from "../Components/Modal";
@@ -8,10 +9,11 @@ function ConfirmPurchase() {
   const [open, setOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState({});
   let buyerInfo = JSON.parse(localStorage.getItem("order"));
+  let { id } = useParams();
 
   const active = async () => {
     const res = await axios.get(
-      "https://server.offerup-motors.com/api/active-product"
+      `https://server.offerup-motors.com/api/show/${id}`
     );
     // console.log(res);
     if (res.data.length > 0) {

@@ -7,14 +7,14 @@ import Header from "../Components/Shared/Header";
 
 function ProductDetailsPage() {
   const [activeProduct, setActiveProduct] = useState({});
-  let { id } = useParams();
+  let { id, vehicle, name } = useParams();
   // console.log("vehicle", name);
   const [imageNow, setimageNow] = useState();
   const active = async () => {
     const res = await axios.get(
       `https://server.offerup-motors.com/api/show/${id}`
     );
-    console.log(res);
+    // console.log(res);
     if (res.data.length > 0) {
       setActiveProduct(res.data[0]);
       setimageNow(res.data[0]?.image2);

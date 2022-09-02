@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import "./Checkout.css";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import cart from "../assets/img/cart.png";
 import locationPoint from "../assets/img/locationPoint.png";
 import logo from "../assets/img/logo.jpeg";
@@ -13,6 +13,7 @@ import { toastifyAlertSuccess } from "../Components/alert/tostifyALert";
 
 const Checkout = () => {
   const navigate = useNavigate();
+  let { id } = useParams();
   const [loding, setLoading] = useState(false);
 
   const [order, setOrder] = useState({
@@ -28,7 +29,7 @@ const Checkout = () => {
 
   const active = async () => {
     const res = await axios.get(
-      "https://server.offerup-motors.com/api/active-product"
+      `https://server.offerup-motors.com/api/show/${id}`
     );
     // console.log(res);
     if (res.data.length > 0) {

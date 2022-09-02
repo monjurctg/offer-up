@@ -16,9 +16,9 @@ function App() {
 {/* <Route path='/' element={<ProductDetailsPage/>}/> */}
 <Route path='/:id/:vehicle/:name' element={<ProductDetailsPage/>}/>
 
-      <Route path="/congratulation" element={<Home />}/>
-      <Route path="/checkout" element={<Checkout />}/>
-      <Route path="/confirm-purchase" element={<ConfirmPurchase />}/>
+      <Route path="/congratulation/:id/:vehicle/:name" element={<Home />}/>
+      <Route path="/checkout/:id/:vehicle/:name" element={<Checkout />}/>
+      <Route path="/confirm-purchase/:id/:vehicle/:name" element={<ConfirmPurchase />}/>
 
     </Routes>
   </BrowserRouter>
