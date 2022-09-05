@@ -19,7 +19,7 @@ function ProductDetails({ activeProduct }) {
             {132344345434 + Math.floor(Math.random(11) * 1999)}
           </h5>
           <div className="d-flex">
-            <button>waiting list:2</button>
+            <button>Waiting List:2</button>
             <p className="ms-1">
               <img src={icon} alt="" />
             </p>

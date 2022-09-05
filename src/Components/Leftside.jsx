@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Leftside({ product }) {
+  console.log(product);
   let { id, vehicle, name } = useParams();
   return (
     <div className="left-side">
@@ -16,7 +17,7 @@ function Leftside({ product }) {
 
         <div className="posting-time ">
           <p>Posted 2 days ago in {product?.place}</p>
-          <p>Condition: New</p>
+          <p>Condition: Used Like New</p>
           <p>Category: Car & Trucks</p>
         </div>
         <Link to={`/checkout/${id}/${vehicle}/${name}`}>

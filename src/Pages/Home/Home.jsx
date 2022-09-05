@@ -43,7 +43,7 @@ function Home() {
         </p>
 
         <ProductDetails activeProduct={activeProduct} />
-        <DetailInformation />
+        <DetailInformation product={activeProduct} />
         <HowToPayment />
         <Location />
         <Qr />

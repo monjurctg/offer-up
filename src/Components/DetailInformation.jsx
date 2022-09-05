@@ -1,8 +1,8 @@
 import React from "react";
 
-function DetailInformation() {
+function DetailInformation({ product }) {
   let buyerInfo = JSON.parse(localStorage.getItem("order"));
-  // console.log("buyerInfo :>> ", buyerInfo);
+  console.log("buyerInfo :>> ", product);
   return (
     <div className="information-container mt-5">
       <p className="heading">Detail information</p>
@@ -21,12 +21,14 @@ function DetailInformation() {
                 className="ms-5"
                 style={{ color: "black", fontSize: "20px" }}
               >
-                Sarah Wylde
+                {product.sellerName ?? " Sarah Wylde"}
               </span>
             </div>
             <div className="mt-4 d-flex" style={{ fontSize: "20px" }}>
               <span className="fw-bold">Address:</span>
-              <span className="ms-4">1933 Skyline Dr Minot ND 58703</span>
+              <span className="ms-4">
+                {product.sellerAdress ?? " 1933 Skyline Dr Minot ND 58703"}
+              </span>
             </div>
           </div>
         </div>
