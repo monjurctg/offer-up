@@ -19,7 +19,7 @@ function HowToPayment() {
         name. If, by any reason you decide that you do not want to keep the
         product, you will need to contact us by phone to confirm. The{" "}
         <span style={{ color: "#1B7873" }}>Return process</span> will take up to
-        48 hours, until our agents will take the item and the documents back
+        12 hours, until our agents will take the item and the documents back
         from you. When our{" "}
         <span style={{ color: "#1B7873" }}>Transport Agents</span> and the{" "}
         <span style={{ color: "#1B7873" }}>OfferUp Motors Representative</span>

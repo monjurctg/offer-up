@@ -2,7 +2,7 @@ import React from "react";
 
 function DetailInformation({ product }) {
   let buyerInfo = JSON.parse(localStorage.getItem("order"));
-  console.log("buyerInfo :>> ", product);
+  // console.log("buyerInfo :>> ", product);
   return (
     <div className="information-container mt-5">
       <p className="heading">Detail information</p>
