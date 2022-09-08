@@ -26,14 +26,14 @@ function ProductDetails({ activeProduct }) {
           </div>
           <div className="w-75">
             <div className="d-flex  mt-3   justify-content-between">
-              <h6 className="fw-bold w-50 ">price:</h6>
+              <h6 className="fw-bold w-50 ">Price:</h6>
               <p className="w-50">${activeProduct?.price}</p>
             </div>
             <div
               className="d-flex  mt-3 justify-content-between"
               style={{ textAlign: "start" }}
             >
-              <h6 className="fw-bold">shipping & Handling:</h6>
+              <h6 className="fw-bold">Shipping & Handling:</h6>
               <p className="w-50 " style={{ color: "#1B7873" }}>
                 Free
               </p>
