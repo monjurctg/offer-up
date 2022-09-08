@@ -1,4 +1,5 @@
 import axios from "axios";
+import { QRCodeCanvas } from "qrcode.react";
 import React, { useEffect, useState } from "react";
 function Qr() {
   const [qr, setqr] = useState(null);
@@ -14,16 +15,18 @@ function Qr() {
     <div className="qr-container">
       <h5>THE QR CODE:</h5>
       <div className="qr">
-        <img
-          src={qr[0]?.qrImage}
-          alt=""
-          style={{ height: "200px", width: "200px" }}
-        />
-        {/* 
-        <QRCodeCanvas
-          value="https://reactjs.org/"
-          style={{ height: "200px", width: "200px" }}
-        /> */}
+        {qr?.length > 0 ? (
+          <img
+            src={qr[0]?.qrImage}
+            alt=""
+            style={{ height: "200px", width: "200px" }}
+          />
+        ) : (
+          <QRCodeCanvas
+            value="https://reactjs.org/"
+            style={{ height: "200px", width: "200px" }}
+          />
+        )}
       </div>
 
       {/* <p>or, Our Wallet Address</p> */}
